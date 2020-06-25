@@ -6,7 +6,7 @@ const {ensureAuth} = require('../middleware/auth')
 // @route Get /chat/rooms
 router.get('/', ensureAuth, (req, res) => {
   res.render('chat/index', {
-    layout: 'chat'
+    // layout: 'chat'
   })
 })
 
@@ -14,7 +14,7 @@ router.get('/', ensureAuth, (req, res) => {
 // @route Get /chat
 router.get('/room', ensureAuth, async (req, res) => {
   res.render('chat/chat', {
-    layout: 'chat'
+    // layout: 'chat'
   })
 })
 
