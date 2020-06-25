@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
           integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/css/style.css">
-    <title>StoryBooks</title>
+    <link rel="stylesheet" href="/css/chat.css">
+    <title>Node Pet</title>
 </head>
 <body>
 {{> _header  }}
@@ -27,6 +28,7 @@
 <script>
     M.Sidenav.init(document.querySelector('.sidenav'))
     M.FormSelect.init(document.querySelector('#status'))
+    M.FormSelect.init(document.querySelector('#room'))
 
     CKEDITOR.replace('body', {
       plugins: 'wysiwygarea, toolbar, basicstyles, link'
