@@ -1,6 +1,6 @@
 const chatForm = document.getElementById('chat-form')
 const chatMessages = document.querySelector('.chat-messages')
-const roomName = document.getElementById('room-name')
+// const roomName = document.getElementById('room-name')
 const userList = document.getElementById('users')
 
 
@@ -17,7 +17,7 @@ socket.emit('joinRoom', { username, room})
 
 // Get users and room
 socket.on('roomUsers',({room,users}) => {
-  outputRoomName(room)
+  // outputRoomName(room)
   outputUsers(users)
 })
 
@@ -61,9 +61,9 @@ function outputMessage(message) {
 }
 
 // Add room name to DOM
-function outputRoomName(room) {
-  roomName.innerText = room
-}
+// function outputRoomName(room) {
+//   roomName.innerText = room
+// }
 
 // Add users to DOM
 function outputUsers(users) {

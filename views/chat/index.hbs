@@ -3,7 +3,7 @@
         <h1>ChatRoom</h1>
     </header>
     <main class="join-main">
-        <form action="/chat/room">
+        <form action="/chat/room" id="chat-room-form" method="post">
             <div class="row">
                 <label for="username">Username</label>
                 <input
@@ -26,3 +26,11 @@
         </form>
     </main>
 </div>
+<script>
+    const form = document.getElementById('chat-room-form')
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+        form.action += `/${e.target.room.value}`
+        form.submit()
+    })
+</script>
