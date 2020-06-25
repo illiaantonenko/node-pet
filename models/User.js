@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const Story = require('./Story')
 
 const UserSchema = new mongoose.Schema({
   googleId: {
@@ -17,6 +18,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  password: {
+    type: String,
+    required: false
+  },
   image: {
     type: String
   },
@@ -24,6 +29,11 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+})
+
+UserSchema.pre('remove', (next) => {
+  Story.remove({user: this.id}).exec()
+  next()
 })
 
 module.exports = mongoose.model('User', UserSchema)
